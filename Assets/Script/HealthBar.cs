@@ -5,7 +5,6 @@ namespace Script
 {
     public class HealthBar : MonoBehaviour
     {
-
         Slider _slider;
         public GameObject textUI;
         Text _text;
@@ -34,5 +33,6 @@ namespace Script
             _slider.value = sliderVal;
             
         }
+        
     }
 }

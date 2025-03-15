@@ -358,7 +358,9 @@
 "Assets/Script/CraftingSystem.cs"
 "Assets/Script/CraftingUIController.cs"
 "Assets/Script/DragDrop.cs"
+"Assets/Script/FoodBar.cs"
 "Assets/Script/HealthBar.cs"
+"Assets/Script/HotBarSystem.cs"
 "Assets/Script/InteractableObject.cs"
 "Assets/Script/InventorySystem.cs"
 "Assets/Script/ItemCollected.cs"
@@ -370,6 +372,7 @@
 "Assets/Script/RabbitController.cs"
 "Assets/Script/SelectionManager.cs"
 "Assets/Script/ToolUIController.cs"
+"Assets/Script/WaterBar.cs"
 -langversion:9.0
 /deterministic
 /optimize+

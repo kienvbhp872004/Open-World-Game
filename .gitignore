@@ -1,0 +1,14 @@
+# Bỏ qua file tạm của Unity
+Library/
+Temp/
+Logs/
+UserSettings/
+
+# Bỏ qua file meta không cần thiết
+*.cs.meta
+*.sln
+
+# Bỏ qua file cấu hình của Unity Editor
+*.dwlt
+*.pref
+*.json
