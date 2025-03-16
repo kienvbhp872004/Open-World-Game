@@ -25,13 +25,14 @@ public class PlayerMovement : MonoBehaviour
  
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f;
+            velocity.y = -10f;
         }
  
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
  
-        Vector3 move = transform.right * x + transform.forward * z;
+        Vector3 move = new Vector3(transform.forward.x, 0, transform.forward.z).normalized * z + 
+               new Vector3(transform.right.x, 0, transform.right.z).normalized * x;
  
         controller.Move(move * speed * Time.deltaTime);
  

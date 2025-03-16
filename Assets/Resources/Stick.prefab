@@ -99,9 +99,10 @@ GameObject:
   - component: {fileID: 3341600216312937592}
   - component: {fileID: 2114692329096540834}
   - component: {fileID: 5691253080381882782}
+  - component: {fileID: 1514563273027357471}
   m_Layer: 0
   m_Name: Stick
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,3 +246,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1514563273027357471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7015161870742713622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80b18e87aeb4df2a24a7c4a147e0675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Stick
+  itemImage: {fileID: 0}
+  itemDescription: Useful for crafting Tools

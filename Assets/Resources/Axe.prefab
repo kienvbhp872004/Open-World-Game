@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7394748179602859398}
   - component: {fileID: -1182135449674252364}
   - component: {fileID: -7142355728272206981}
+  - component: {fileID: -2334300134774575101}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,3 +103,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &-2334300134774575101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945374383664770220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80b18e87aeb4df2a24a7c4a147e0675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Axe
+  itemImage: {fileID: 0}
+  itemDescription: Used for chopping wood
