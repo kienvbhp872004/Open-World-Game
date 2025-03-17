@@ -52,6 +52,7 @@
     <Compile Include="Assets\Script\HotBarSystem.cs" />
     <Compile Include="Assets\Script\MouseMovement.cs" />
     <Compile Include="Assets\Script\RabbitController.cs" />
+    <Compile Include="Assets\Script\WeaponSystem.cs" />
     <Compile Include="Assets\FantasyEnvironments\Environments\Town\Scripts\Door.cs" />
     <Compile Include="Assets\Script\ToolUIController.cs" />
     <Compile Include="Assets\Script\InventorySystem.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Assets\Script\ItemCollected.cs" />
     <Compile Include="Assets\Script\CraftingUIController.cs" />
     <Compile Include="Assets\Script\CraftingSystem.cs" />
+    <Compile Include="Assets\Script\Axe.cs" />
     <Compile Include="Assets\Script\NotificationUI.cs" />
     <Compile Include="Assets\Script\PlayerMovement.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

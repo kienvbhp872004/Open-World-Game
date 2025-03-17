@@ -354,6 +354,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.43f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/FantasyEnvironments/Environments/Town/Scripts/Door.cs"
 "Assets/Rabbits/Demo/Scripts/AnimatorParamatersChange.cs"
+"Assets/Script/Axe.cs"
 "Assets/Script/ButtonController.cs"
 "Assets/Script/CraftingSystem.cs"
 "Assets/Script/CraftingUIController.cs"
@@ -375,6 +376,7 @@
 "Assets/Script/SelectionManager.cs"
 "Assets/Script/ToolUIController.cs"
 "Assets/Script/WaterBar.cs"
+"Assets/Script/WeaponSystem.cs"
 -langversion:9.0
 /deterministic
 /optimize+

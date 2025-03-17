@@ -8,6 +8,7 @@ namespace Script
     {
         public string itemName;
         public string itemDescription;
+        public bool consumable;
 
         public void OnPointerEnter(PointerEventData eventData)
         {
