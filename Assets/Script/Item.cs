@@ -25,7 +25,6 @@ namespace Script
             ItemTooltip.Instance.itemName.text = itemName;
             ItemTooltip.Instance.itemDescription.text = itemDescription;
 
-            // Định vị tooltip gần item
             ItemTooltip.Instance.tooltipPanel.transform.position = transform.position + new Vector3(200, 150, 0);
             ItemTooltip.Instance.tooltipPanel.SetActive(true);
         }

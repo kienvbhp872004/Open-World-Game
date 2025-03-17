@@ -1354,7 +1354,7 @@ GameObject:
   - component: {fileID: 222623299}
   - component: {fileID: 222623298}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CenterDot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11504,6 +11504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hotBar: {fileID: 1215650915}
   selectiveSlot: {fileID: 221411459}
+  equippedItem: {fileID: 1882972996}
 --- !u!1 &2046775738
 GameObject:
   m_ObjectHideFlags: 0
