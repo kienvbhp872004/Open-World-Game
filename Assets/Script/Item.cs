@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ namespace Script
     {
         public string itemName;
         public string itemDescription;
-        public bool consumable;
+        
 
         public void OnPointerEnter(PointerEventData eventData)
         {
@@ -34,6 +35,10 @@ namespace Script
             Invoke(nameof(HideTooltip), 0.1f); // Delay để kiểm tra con trỏ có vào tooltip không
         }
 
+        void Update()
+        {
+            
+        }
         private void HideTooltip()
         {
             if (!ItemTooltip.Instance.IsPointerOverTooltip())

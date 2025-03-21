@@ -53,6 +53,7 @@
     <Compile Include="Assets\Script\MouseMovement.cs" />
     <Compile Include="Assets\Script\RabbitController.cs" />
     <Compile Include="Assets\Script\WeaponSystem.cs" />
+    <Compile Include="Assets\Script\ConsumableItem.cs" />
     <Compile Include="Assets\FantasyEnvironments\Environments\Town\Scripts\Door.cs" />
     <Compile Include="Assets\Script\ToolUIController.cs" />
     <Compile Include="Assets\Script\InventorySystem.cs" />

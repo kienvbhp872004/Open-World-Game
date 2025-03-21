@@ -356,6 +356,7 @@
 "Assets/Rabbits/Demo/Scripts/AnimatorParamatersChange.cs"
 "Assets/Script/Axe.cs"
 "Assets/Script/ButtonController.cs"
+"Assets/Script/ConsumableItem.cs"
 "Assets/Script/CraftingSystem.cs"
 "Assets/Script/CraftingUIController.cs"
 "Assets/Script/DragDrop.cs"

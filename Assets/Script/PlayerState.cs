@@ -55,5 +55,12 @@ namespace Script
             }   
          
         }
+
+        public void ChangeState(int Health, int Food, int Water)
+        {
+            _currentHealth = Mathf.Clamp(_currentHealth + Health, 0, _maxHealth);
+            _currentFood = Mathf.Clamp(_currentFood + Food, 0, _maxFood);
+            _currentWater = Mathf.Clamp(_currentWater + Water, 0, _maxWater);
+        }
     }
 }

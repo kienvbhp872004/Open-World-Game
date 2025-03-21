@@ -8,6 +8,7 @@ namespace Script
     {
         public GameObject hotBar;
         public GameObject selectiveSlot;
+        public GameObject selection;
         private GameObject _selectedItem;
         public GameObject equippedItem;
 
@@ -24,6 +25,7 @@ namespace Script
             {
                 SetItemSelect();
             }
+            ConsumedItem();
         }
 
         // ✅ Tối ưu hóa lưu danh sách Slot ngay từ đầu
@@ -52,7 +54,7 @@ namespace Script
                 {
                     _selectedItem = null;
                 }
-
+                
                 selectiveSlot.transform.localPosition = slot.transform.localPosition;
                 return true;
             }
@@ -103,12 +105,41 @@ namespace Script
             GameObject itemPrefab = Resources.Load<GameObject>(itemName+"_model");
             if (itemPrefab == null)
             {
-                Debug.LogError($"Không tìm thấy Prefab: {itemName} trong Resources!");
+                Debug.Log($"Không tìm thấy Prefab: {itemName} trong Resources!");
                 return;
             }
 
             GameObject item = Instantiate(itemPrefab, equippedItem.transform.position, Quaternion.Euler(0,0,0));
             item.transform.SetParent(equippedItem.transform, false);
+        }
+        void ConsumedItem()
+        {
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                GameObject equipment = equippedItem.transform.GetChild(0).gameObject;
+                if (equipment == null) return;
+                ConsumableItem item = equipment.GetComponent<ConsumableItem>();
+                if (item != null )
+                {
+                    Debug.Log(("Oke"));
+                    PlayerState.Instance.ChangeState(item.health,item.food,item.water);
+                    Destroy(_selectedItem);
+                    Destroy(equipment);
+
+                }
+                else
+                {
+                    Debug.Log("Sản phẩm không thể tiêu thụ");
+                }
+            }
+        }
+
+        void DropItem()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                
+            }
         }
     }
 }
