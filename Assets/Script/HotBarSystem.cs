@@ -7,8 +7,8 @@ namespace Script
     public class HotBarSystem : MonoBehaviour
     {
         public GameObject hotBar;
-        public GameObject selectiveSlot;
-        public GameObject selection;
+        private GameObject selectiveSlot;
+        private GameObject selection;
         private GameObject _selectedItem;
         public GameObject equippedItem;
 
@@ -25,7 +25,8 @@ namespace Script
             {
                 SetItemSelect();
             }
-            ConsumedItem();
+            ConsumedItem(); 
+            Debug.Log(equippedItem.transform.position);
         }
 
         // ✅ Tối ưu hóa lưu danh sách Slot ngay từ đầu
@@ -80,7 +81,6 @@ namespace Script
             return false;
         }
 
-        // ✅ Tránh tạo lại item liên tục nếu item đã được trang bị rồi
         void SetItemSelect()
         {
             if (equippedItem.transform.childCount > 0)

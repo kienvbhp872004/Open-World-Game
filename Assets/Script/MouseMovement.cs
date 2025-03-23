@@ -36,14 +36,11 @@ public class MouseMovement : MonoBehaviour
             transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
             
         }
-
-
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleCursor();
         }
     }
-
     private void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
