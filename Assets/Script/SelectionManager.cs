@@ -43,7 +43,6 @@ namespace Script
                     onTarget = true;
                     interaction_info_text.text = interactable.GetNameObject();
                     interaction_info_UI.SetActive(true);
-                    print(hit.transform.name);
                 }
                 else
                 {

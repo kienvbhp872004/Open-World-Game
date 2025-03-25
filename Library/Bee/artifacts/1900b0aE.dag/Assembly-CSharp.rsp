@@ -363,6 +363,8 @@
 "Assets/Script/FoodBar.cs"
 "Assets/Script/HealthBar.cs"
 "Assets/Script/HotBarSystem.cs"
+"Assets/Script/IChoppable.cs"
+"Assets/Script/IDamageable.cs"
 "Assets/Script/InteractableObject.cs"
 "Assets/Script/InventorySystem.cs"
 "Assets/Script/Item.cs"
@@ -376,6 +378,7 @@
 "Assets/Script/RabbitController.cs"
 "Assets/Script/SelectionManager.cs"
 "Assets/Script/ToolUIController.cs"
+"Assets/Script/Tree.cs"
 "Assets/Script/WaterBar.cs"
 "Assets/Script/WeaponSystem.cs"
 -langversion:9.0

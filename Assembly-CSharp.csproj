@@ -52,10 +52,12 @@
     <Compile Include="Assets\Script\HotBarSystem.cs" />
     <Compile Include="Assets\Script\MouseMovement.cs" />
     <Compile Include="Assets\Script\RabbitController.cs" />
+    <Compile Include="Assets\Script\Tree.cs" />
     <Compile Include="Assets\Script\WeaponSystem.cs" />
     <Compile Include="Assets\Script\ConsumableItem.cs" />
     <Compile Include="Assets\FantasyEnvironments\Environments\Town\Scripts\Door.cs" />
     <Compile Include="Assets\Script\ToolUIController.cs" />
+    <Compile Include="Assets\Script\IDamageable.cs" />
     <Compile Include="Assets\Script\InventorySystem.cs" />
     <Compile Include="Assets\Script\FoodBar.cs" />
     <Compile Include="Assets\Script\WaterBar.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\ItemTooltip.cs" />
     <Compile Include="Assets\Script\PlayerState.cs" />
+    <Compile Include="Assets\Script\IChoppable.cs" />
     <Compile Include="Assets\Script\ItemCollected.cs" />
     <Compile Include="Assets\Script\CraftingUIController.cs" />
     <Compile Include="Assets\Script\CraftingSystem.cs" />
