@@ -32,7 +32,7 @@ namespace Script
         {
             if (Input.GetKeyDown(KeyCode.E) && playerInRange)
             {
-                if (SelectionManager.instance == null)
+                if (SelectionManager.Instance == null)
                 {
                     Debug.LogError("SelectionManager.instance is NULL!");
                     return;
@@ -50,7 +50,7 @@ namespace Script
                     return;
                 }
 
-                if (SelectionManager.instance.onTarget && SelectionManager.instance.selectedObject == gameObject)
+                if (SelectionManager.Instance.onTarget && SelectionManager.Instance.selectedObject == gameObject)
                 {
                     if (!InventorySystem.Instance.isFull)
                     {

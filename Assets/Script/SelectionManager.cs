@@ -10,7 +10,7 @@ namespace Script
         public float maxDistance = 5f;
         public bool onTarget = false;
         public GameObject selectedObject;
-        public static SelectionManager instance {get; private set;}
+        public static SelectionManager Instance {get; private set;}
         // Start is called before the first frame update
         void Start()
         {
@@ -19,13 +19,13 @@ namespace Script
 
         private void Awake()
         {
-            if (instance != null && instance != this)
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
             }
             else
             {
-                instance = this;
+                Instance = this;
             }
         }
         // Update is called once per frame
