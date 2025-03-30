@@ -1,48 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+namespace Script
 {
-    public CharacterController controller;
- 
-    public float speed = 12f;
-    public float gravity = -9.81f * 2;
-    public float jumpHeight = 3f;
- 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
- 
-    Vector3 velocity;
- 
-    bool isGrounded;
- 
-    // Update is called once per frame
-    void Update()
+    public class PlayerMovement : MonoBehaviour
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        public CharacterController controller;
  
-        if (isGrounded && velocity.y < 0)
+        public float speed = 12f;
+        public float gravity = -9.81f * 2;
+        public float jumpHeight = 3f;
+ 
+        public Transform groundCheck;
+        public float groundDistance = 0.4f;
+        public LayerMask groundMask;
+ 
+        Vector3 velocity;
+ 
+        bool isGrounded;
+ 
+        // Update is called once per frame
+        void Update()
         {
-            velocity.y = -10f;
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+ 
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = -10f;
+            }
+ 
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+ 
+            Vector3 move = new Vector3(transform.forward.x, 0, transform.forward.z).normalized * z + 
+                           new Vector3(transform.right.x, 0, transform.right.z).normalized * x;
+ 
+            controller.Move(move * speed * Time.deltaTime);
+ 
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            }
+ 
+            velocity.y += gravity * Time.deltaTime;
+ 
+            controller.Move(velocity * Time.deltaTime);
         }
- 
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
- 
-        Vector3 move = new Vector3(transform.forward.x, 0, transform.forward.z).normalized * z + 
-               new Vector3(transform.right.x, 0, transform.right.z).normalized * x;
- 
-        controller.Move(move * speed * Time.deltaTime);
- 
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
- 
-        velocity.y += gravity * Time.deltaTime;
- 
-        controller.Move(velocity * Time.deltaTime);
     }
 }

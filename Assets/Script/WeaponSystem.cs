@@ -9,7 +9,7 @@ namespace Script
         public LayerMask hitLayers;
         private Animator _animator;
 
-        void Start()
+        public void Start()
         {
             _animator = GetComponent<Animator>();
         }
@@ -18,7 +18,7 @@ namespace Script
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Attack();
+                // Attack();
                 _animator.SetTrigger("Hit");
             }
         }
