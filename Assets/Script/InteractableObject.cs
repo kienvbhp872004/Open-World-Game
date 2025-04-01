@@ -54,9 +54,9 @@ namespace Script
                 {
                     if (!InventorySystem.Instance.isFull)
                     {
-                        InventorySystem.Instance.itemCount[nameObject]++;
+                        // InventorySystem.Instance.itemCount[nameObject]++;
                         InventorySystem.Instance.AddItem(nameObject);
-                        NotificationUI.Instance.ShowNotification(nameObject);
+                        // NotificationUI.Instance.ShowNotification(nameObject);
                         Destroy(gameObject);
                     }
                 }
