@@ -17,9 +17,10 @@ namespace Script
             AddDropItem();
             Debug.Log($"Cây bị chặt! Sức chặt: {chopPower}, Máu cây còn: {chopsRequired}");
             chopsRequired -= chopPower;
+            animator.SetTrigger("Chop");
             if (chopsRequired <= 0)
             {
-                animator.SetTrigger("Fall");
+                animator.SetTrigger("Fall"); 
             }
         }
         public void AddDropItem()

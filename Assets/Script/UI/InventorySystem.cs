@@ -35,6 +35,7 @@ namespace Script
             itemCount["Stick"] = 0;
             itemCount["Meat"] = 0;
             itemCount["Axe"] = 0;
+            itemCount["Chest"] = 0;
             isOpen = false;
             PopulateSlotList();
             isFull = false;
