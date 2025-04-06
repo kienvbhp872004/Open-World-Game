@@ -176,10 +176,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPrefab: {fileID: 200656426496270618}
+  ghostPrefab: {fileID: 6748689494169437993, guid: 687df382b56db5a43b9805a1ed700226, type: 3}
   placementDistance: 5
   placementLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  ghostColor: {r: 1, g: 1, b: 1, a: 0.5}
+  invalidPlacementColor: {r: 1, g: 0, b: 0, a: 0.5}
 --- !u!1 &955413602834360530
 GameObject:
   m_ObjectHideFlags: 0

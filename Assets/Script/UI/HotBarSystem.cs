@@ -8,10 +8,9 @@ namespace Script
     {
         public GameObject hotBar;
         public GameObject selectiveSlot;
-        private GameObject selection;
+        private GameObject _selection;
         private GameObject _selectedItem;
         public GameObject equippedItem;
-
         private Dictionary<string, GameObject> _slotDictionary = new Dictionary<string, GameObject>();
 
         void Start()
@@ -26,8 +25,8 @@ namespace Script
                 SetItemSelect();
             }
             ConsumedItem(); 
-            // Debug.Log(equippedItem.transform.position);
             DropItem();
+            PlaceItem();
         }
 
         // ✅ Tối ưu hóa lưu danh sách Slot ngay từ đầu
@@ -112,7 +111,9 @@ namespace Script
             if (itemPrefab == null)
             {
                 Debug.Log($"Không tìm thấy Prefab: {itemName} trong Resources!");
+                itemPrefab = Resources.Load<GameObject>(itemName);
                 return;
+
             }
 
             GameObject item = Instantiate(itemPrefab, equippedItem.transform.position, Quaternion.Euler(0,0,0));
@@ -156,6 +157,18 @@ namespace Script
                 _selectedItem = null;
                 Destroy(equipment);
                 InventorySystem.Instance.DeleteItem(equipment.name.Replace("_model(Clone)","").Trim());
+            }
+        }
+
+        void PlaceItem()
+        {
+            if (equippedItem.transform.childCount == 0) return;
+            GameObject equipment = equippedItem.transform.GetChild(0).gameObject;
+            if (equipment == null) return;
+            PlaceableItem item = equipment.GetComponent<PlaceableItem>();
+            if (item)
+            {
+               item.SetSetupMode(true); 
             }
         }
     }

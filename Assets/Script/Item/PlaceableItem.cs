@@ -8,10 +8,10 @@ public class PlaceableItem : MonoBehaviour
     public LayerMask placementLayerMask; // Các layer mà vật phẩm có thể được đặt lên.
     public Color ghostColor = new Color(1f, 1f, 1f, 0.5f); // Màu của ghost item (mờ).
     public Color invalidPlacementColor = new Color(1f, 0f, 0f, 0.5f); // Màu cảnh báo khi không thể đặt vật phẩm.
-
     private Camera playerCamera;
     private GameObject ghostItem; // Ghost item sẽ được hiển thị trước khi đặt vật phẩm.
     private Renderer[] childRenderers; // Renderer của ghost item để thay đổi màu sắc.
+    private bool setupMode;
 
     void Start()
     {
@@ -23,11 +23,15 @@ public class PlaceableItem : MonoBehaviour
 
         // Lấy tất cả các renderer của các đối tượng con của ghost item
         childRenderers = ghostItem.GetComponentsInChildren<Renderer>();
+        setupMode = false;
     }
 
     void Update()
     {
-        HandleItemPlacement();
+        if (setupMode)
+        {
+            HandleItemPlacement();
+        }
     }
 
     void HandleItemPlacement()
@@ -73,9 +77,23 @@ public class PlaceableItem : MonoBehaviour
 
     bool IsPositionValid(Vector3 position)
     {
-        // Kiểm tra có vật thể nào khác tại vị trí này không
-        Collider[] colliders = Physics.OverlapSphere(position, 0.5f); // Kiểm tra trong bán kính nhỏ
-        return colliders.Length == 0; // Nếu không có collider nào khác, vị trí hợp lệ
+        Vector3 halfExtents = new Vector3(0.1f, 0.1f, 0.1f);
+
+        // Vẽ vùng kiểm tra mỗi lần gọi hàm
+        DebugDrawBox(position, halfExtents, Color.red);
+
+        Collider[] colliders = Physics.OverlapBox(position, halfExtents);
+        return colliders.Length == 0;
+    }
+
+    void DebugDrawBox(Vector3 center, Vector3 halfExtents, Color color)
+    {
+        // Vẽ debug box bằng Gizmos – chỉ hiển thị trong Editor
+#if UNITY_EDITOR
+        Debug.DrawLine(center + new Vector3(-halfExtents.x, -halfExtents.y, -halfExtents.z),
+            center + new Vector3(halfExtents.x, -halfExtents.y, -halfExtents.z), color);
+        // (Bạn có thể thêm nhiều đoạn Debug.DrawLine để vẽ đủ 12 cạnh nếu cần)
+#endif
     }
 
     void PlaceItem(Vector3 position, Vector3 normal)
@@ -95,5 +113,14 @@ public class PlaceableItem : MonoBehaviour
         {
             renderer.material.color = color;
         }
+    }
+    public void SetSetupMode(bool value)
+    {
+        setupMode = value;
+    }
+
+    public bool GetSetupMode()
+    {
+        return setupMode;
     }
 }

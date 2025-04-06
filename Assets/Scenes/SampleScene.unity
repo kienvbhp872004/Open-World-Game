@@ -2155,12 +2155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acaf29d0d5a5438f8132b9f53fbc23ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementHoldingSpot: {fileID: 139025899}
-  enviromentPlaceables: {fileID: 1870036213}
-  inPlacementMode: 0
-  isValidPlacement: 0
-  itemToBePlaced: {fileID: 0}
-  inventoryItemToDestory: {fileID: 0}
 --- !u!4 &307991283
 Transform:
   m_ObjectHideFlags: 0
